@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>TSA Claims Heatmap</title>
+		<style>
+			#map{
+				height: 100%;
+			}
+			html, body{
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.navbar {
+				/*position: absolute;*/
+				z-index: 50;
+				background-color: #fff;
+				padding: .05vw;
+			}
+		</style>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=aizasyab7fmjhvphsbrid5ythmzkkuvsrs9k4qc&libraries=visualization">
+	</head>
+	
+	<body>
+		<div class="flex-container-fluid">
+			<div class="row">
+				<div class="col-12-*>
+					<div class="navbar navbar-inverse navbar-fixed-top">
+						<div class="flex-div">
+							<btn class="navbar-btn nav-item btn btn-info" id="nav-btn-home-page">
+								<a href=#>Home</a>		
+							</btn>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="map"></div>
+		</div>
+		<script>
+			var map, heatmap;
+
+			function initMap() {
+				map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 5,
+					center: {Chicago},
+					mapTypeId: 'roadmap'
+				});
+
+				heatmap = new google.maps.visualization.HeatmapLayer({
+					data:getPoints(),
+					map:map
+				});
+			}
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=aizasyab7fmjhvphsbrid5ythmzkkuvsrs9k4qc&libraries=visualization&callback=initMap">
+		</script>
+	</body
+</html>
+
